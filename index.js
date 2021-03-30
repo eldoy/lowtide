@@ -11,7 +11,7 @@ module.exports = file => {
         : JSON.stringify(x, null, 2)
     }
     fs.appendFile(file, `${x}\n`, err => {
-      if (err) throw err
+      if (err) console.log(x)
     })
   }
 }
