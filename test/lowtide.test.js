@@ -18,6 +18,17 @@ it('should log a string', (done) => {
   }, 100)
 })
 
+it('should log a formatted string', (done) => {
+  const log = lowtide('file.log')
+  log('hello %d', 5000)
+
+  setTimeout(function() {
+    const result = fs.readFileSync('file.log', 'utf8')
+    expect(result.trim()).toBe('hello 5000')
+    done()
+  }, 100)
+})
+
 it('should log an object', (done) => {
   const log = lowtide('file.log')
   log({ hello: 1 })
