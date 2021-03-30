@@ -4,7 +4,7 @@ NodeJS file logger.
 
 Features:
 
-* Extrememly minimal and fast, no dependencies
+* Extremely minimal and fast, no dependencies
 * Logs to file asynchronously
 * Supports formatted logging of arrays, objects and dates
 
