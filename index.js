@@ -17,7 +17,7 @@ module.exports = file => {
     }
 
     fs.appendFile(file, `${x}\n`, function(err) {
-      if (err) process.process.stdout.write(`${x}\n`)
+      if (err) process.stdout.write(`${x}\n`)
     })
   }
 }
