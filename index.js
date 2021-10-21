@@ -2,11 +2,11 @@ const fs = require('fs')
 const path = require('path')
 const util = require('util')
 
-module.exports = file => {
+module.exports = function(file) {
   file = path.resolve(file)
 
   return function(...args) {
-    x = args.length > 1
+    let x = args.length > 1
       ? util.format(...args)
       : args[0]
 
