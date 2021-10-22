@@ -30,8 +30,8 @@ log({ name: 'something' })
 
 // Log console log and error to file
 if (process.env.NODE_ENV == 'production') {
-  console.log = lowtide('../log/app.log')
-  console.error = lowtide('../log/err.log')
+  console.log = lowtide('log/app.log')
+  console.error = lowtide('log/err.log')
 }
 ```
 
