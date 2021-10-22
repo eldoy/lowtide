@@ -7,6 +7,7 @@ Features:
 * Extremely minimal and fast, no dependencies
 * Logs to file asynchronously
 * Supports formatted logging of arrays, objects and dates
+* Can be used to log to file with console.log and console.error in production
 
 ### Install
 ```js
@@ -26,6 +27,16 @@ log('Something happened!')
 
 // Log object
 log({ name: 'something' })
+
+// Log console log and error to file
+const lowtide = require('lowtide')
+
+module.exports = async function(app) {
+  if (process.env.NODE_ENV == 'production') {
+    console.log = lowtide('../log/app.log')
+    console.error = lowtide('../log/err.log')
+  }
+}
 ```
 
 MIT Licensed. Enjoy!
